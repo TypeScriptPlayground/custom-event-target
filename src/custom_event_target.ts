@@ -1,9 +1,10 @@
+// deno-lint-ignore-file no-explicit-any
+
 /**
  * A function that handles a {@link CustomEvent} with a specific detail type.
  *
  * @template Detail Type of the `detail` property in the CustomEvent
  */
-// deno-lint-ignore-file no-explicit-any
 export type CustomEventListener<Detail = any> =
   (event : CustomEvent<Detail>) => void;
 
