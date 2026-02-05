@@ -1,7 +1,6 @@
 {
   "name": "@typescriptplayground/custom-event-target",
   "version": "0.1.0",
-  "license": "./LICENSE",
   "exports": {
     ".": "./src/index.ts"
   },
