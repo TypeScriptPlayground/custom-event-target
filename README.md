@@ -1,12 +1,30 @@
-# Template
+# Custom Event Target
 
-[![Run Linter](https://github.com/DenoPlayground/Template/actions/workflows/lint.yml/badge.svg)](https://github.com/DenoPlayground/Template/actions/workflows/lint.yml)
-[![Run Unit Tests](https://github.com/DenoPlayground/Template/actions/workflows/test.yml/badge.svg)](https://github.com/DenoPlayground/Template/actions/workflows/test.yml)
+[![Run Linter](https://github.com/TypeScriptPlayground/custom-event-target/actions/workflows/lint.yml/badge.svg)](https://github.com/TypeScriptPlayground/custom-event-target/actions/workflows/lint.yml)
+[![Run Unit Tests](https://github.com/TypeScriptPlayground/custom-event-target/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/TypeScriptPlayground/custom-event-target/actions/workflows/unit_tests.yml)
 
-This is a template for a Deno module.
+This package contains a class and types for a `CustomEventTarget`.
 
-## File/Directory Structure
+## Example
 
-- `cli.ts` - File for functions which should be executed directly for the module.
-- `src/` - Directory for storing all source code.
-- `docs/` - Directory for storing all documentation files specific for the module.
+```ts
+import { CustomEventTarget, type CustomEventListenerOrCustomEventListenerObject } from '@typescriptplayground/custom-event-target'
+
+class MyClass<MyEvents extends 'foo' | 'bar' | 'baz'> extends CustomEventTarget {
+  override addEventListener(
+    type : MyEvents,
+    listener : CustomEventListenerOrCustomEventListenerObject<MyEvents> | null,
+    options? : boolean | AddEventListenerOptions
+  ) : void {
+
+  }
+
+  override removeEventListener(
+    type : MyEvents,
+    listener : CustomEventListenerOrCustomEventListenerObject<MyEvents> | null,
+    options? : boolean | EventListenerOptions
+  ) : void {
+    
+  }
+}
+```

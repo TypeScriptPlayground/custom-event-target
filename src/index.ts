@@ -3,11 +3,25 @@
  * 
  * @example
  * ```ts
- * class MyClass extends CustomEventTarget { ... }
- * ```
- * @example
- * ```ts
- * const target = new CustomEventTarget();
+ * import { CustomEventTarget, type CustomEventListenerOrCustomEventListenerObject } from '@typescriptplayground/custom-event-target'
+ * 
+ * class MyClass<MyEvents extends 'foo' | 'bar' | 'baz'> extends CustomEventTarget {
+ *   override addEventListener(
+ *     type : MyEvents,
+ *     listener : CustomEventListenerOrCustomEventListenerObject<MyEvents> | null,
+ *     options? : boolean | AddEventListenerOptions
+ *   ) : void {
+ * 
+ *   }
+ * 
+ *   override removeEventListener(
+ *     type : MyEvents,
+ *     listener : CustomEventListenerOrCustomEventListenerObject<MyEvents> | null,
+ *     options? : boolean | EventListenerOptions
+ *   ) : void {
+ *     
+ *   }
+ * }
  * ```
  * @module
  */
